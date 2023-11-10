@@ -48,8 +48,7 @@ public class FormatCsvDAO {
                 String[] arr = name.split(",");
                 StringBuffer sb = new StringBuffer();
                 for (int j = 0; j < arr.length; j++) {
-                    sb.append(Character.toUpperCase(arr[j].charAt(0)))
-                            .append(arr[j].substring(1)).append(" ");
+                    sb.append(Character.toUpperCase(arr[j].charAt(0))) .append(arr[j].substring(1)).append(" ");
                 }
                 ls.get(i).setName(sb.toString().trim());
             }
@@ -67,8 +66,7 @@ public class FormatCsvDAO {
                 String[] arr = address.split(",");
                 StringBuffer sb = new StringBuffer();
                 for (int j = 0; j < arr.length; j++) {
-                    sb.append(Character.toUpperCase(arr[j].charAt(0)))
-                            .append(arr[j].substring(1)).append(" ");
+                    sb.append(Character.toUpperCase(arr[j].charAt(0)))  .append(arr[j].substring(1)).append(" ");
                 }
                 ls.get(i).setAddress(sb.toString().trim());
             }
@@ -84,8 +82,7 @@ public class FormatCsvDAO {
             fileReader = new BufferedReader(new FileReader(fileName));
             while ((line = fileReader.readLine()) != null) {
                 String[] splitCSV = line.split(COMMA_DELIMITER);
-                ls.add(new CSV(Integer.parseInt(splitCSV[0]), splitCSV[1],
-                        splitCSV[2], splitCSV[3], splitCSV[4]));
+                ls.add(new CSV(Integer.parseInt(splitCSV[0]), splitCSV[1], splitCSV[2], splitCSV[3], splitCSV[4]));
 
             }
             System.err.println("Import: Done");
@@ -140,9 +137,7 @@ public class FormatCsvDAO {
 
     public void print(ArrayList<CSV> ls) {
         for (int i = 0; i < ls.size(); i++) {
-            System.out.printf("%d,%s,%s,%s,%s\n", ls.get(i).getId(),
-                    ls.get(i).getName(), ls.get(i).getEmail(), ls.get(i).getPhone(),
-                    ls.get(i).getAddress());
+            System.out.printf("%d,%s,%s,%s,%s\n", ls.get(i).getId(), ls.get(i).getName(), ls.get(i).getEmail(), ls.get(i).getPhone(), ls.get(i).getAddress());
         }
     }
 }
